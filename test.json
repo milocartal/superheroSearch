@@ -1,0 +1,11 @@
+{
+    "attachments": [
+        {
+            "fallback": "I don't trust sushi, there's something fishy about it.",
+            "footer": "<https://icanhazdadjoke.com/j/J69x5hNZvzd|permalink> - <https://icanhazdadjoke.com|icanhazdadjoke.com>",
+            "text": "I don't trust sushi, there's something fishy about it."
+        }
+    ],
+    "response_type": "in_channel",
+    "username": "icanhazdadjoke"
+}
