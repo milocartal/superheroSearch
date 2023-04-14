@@ -5,19 +5,27 @@ import { useParams, Link } from 'react-router-dom';
 
 import '../App.css'
 
-type JSONValue = { id: number, name: string, images:JSONImage}
+//Hero Type
 
-interface JSONObject {
-    [x: string]: JSONValue;
-}
+type JSONHero = { id: number, name: string, slug:string, powerstats:JSONPowerStats, appearance:JSONAppearance, biography:JSONBiography, work:JSONWork,connections:JSONConnect, images:JSONImage}
+
+type JSONPowerStats={inteligence:number, strength:number,speed:number, durability:number, power:number, combat:number}
+
+type JSONAppearance={gender:string, race:string, height:string[], weight:string[], eyeColor:string, hairColor:string}
+
+type JSONBiography={fullName:string, alterEgos:string, aliases:string[], placeOfBirth:string, firstAppearance:string, publisher:string,alignment:string}
+
+type JSONWork={occupation:string, base:string}
+
+type JSONConnect={groupAffiliation:string, relatives:string}
 
 type JSONImage={xs:string; lg:string, sm:string, md:string;}
 
-interface JSONArray extends Array<JSONValue> { }
+interface JSONHeroArray extends Array<JSONHero> { }
 
 function Hero() {
     let { id } = useParams()
-    const [hero, setHero] = useState<JSONValue>()
+    const [hero, setHero] = useState<JSONHero>()
     const baseUrl: string = 'https://akabab.github.io/superhero-api/api/';
 
     useEffect(() => {

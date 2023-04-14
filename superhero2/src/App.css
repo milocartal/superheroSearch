@@ -32,11 +32,26 @@
     animation: logo-spin infinite 20s linear;
   }
 }
-
-.card {
-  padding: 2em;
+.listHero{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
+.card {
+  padding: 1em;
+  /*background-color: #888;*/
+  margin-top: 10px;
+  border-radius: 20px;
+  color:white;
+  transition: all 200ms ease-in-out;
+  width: 200px;
+}
+
+.card:hover{
+  scale: 1.05;
+  background-color: rgba(255,255,255,0.1);
+}
 .read-the-docs {
   color: #888;
 }
