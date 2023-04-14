@@ -37,11 +37,11 @@ function Hero() {
     return (
         <div className="Hero">
             {hero && (
-                <>
+                <div>
                     <h1>{hero.name}</h1>
                     <img src={hero.images.lg} alt={hero.name}></img>
                     
-                </>)}
+                </div>)}
         </div>
     )
 }

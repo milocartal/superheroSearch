@@ -72,7 +72,8 @@ function App() {
               <div className='card'>
                 <p>{hero.name}</p>
                 <img src={hero.images.sm} alt={hero.name} />
-                <p>{hero.biography.publisher}</p>
+                <p>Publisher:</p>
+                <p className='publisher'>{hero.biography.publisher}</p>
               </div>
             </Link>
           )
