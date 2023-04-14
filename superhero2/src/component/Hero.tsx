@@ -36,6 +36,7 @@ function Hero() {
 
     return (
         <div className="Hero">
+            <button>Return Main</button>
             {hero && (
                 <div>
                     <h1>{hero.name}</h1>
