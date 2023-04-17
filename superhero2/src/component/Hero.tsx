@@ -36,11 +36,16 @@ function Hero() {
 
     return (
         <div className="Hero">
-            <button>Return Main</button>
+            <Link to={"/"}><button>Return Main</button></Link>
             {hero && (
                 <div>
                     <h1>{hero.name}</h1>
                     <img src={hero.images.lg} alt={hero.name}></img>
+                    <p>Aliases :</p>
+                    {hero.biography.aliases.map((alias)=>{
+                        if(alias==="-") return (<p>No alias</p>)
+                        else return(<p>{alias}</p>)
+                    })}
                     
                 </div>)}
         </div>

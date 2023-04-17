@@ -33,9 +33,11 @@
   }
 }
 .listHero{
+  margin-top: 10px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  gap: 10px;
 }
 
 .card {

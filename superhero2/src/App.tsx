@@ -47,6 +47,7 @@ function App() {
 
   const [heros, setHeros] = useState<JSONHeroArray>([])
   const [jokes, setJoke] = useState<JSONJoke>(base)
+  const [SearchTerm, setSearchTerm] = useState("");
   const baseUrl: string = 'https://akabab.github.io/superhero-api/api/';
 
   useEffect(() => {
@@ -61,12 +62,22 @@ function App() {
       .then((jo)=>setJoke(jo))
   }
 
+  const handleSearchTerm = (e: React.ChangeEvent<HTMLInputElement>) => {
+		let value = e.target.value;
+		setSearchTerm(value);
+	};
+
   return (
     <div className="App">
-      <h1>SUPER Hero Wiki</h1>
+      <h1>Hero Wiki</h1>
 
+      <input type="text" placeholder="Search Hero name" onChange={handleSearchTerm} />
+
+      
       <div className='listHero'>
-        {heros.length > 0 && heros.map((hero) => {
+        {heros.length > 0 && heros.filter((hero) => {
+					return hero.name.toLowerCase().includes(SearchTerm.toLowerCase())
+				}).map((hero) => {
           return (
             <Link to={`/hero/${hero.id}`} key={hero.id}>
               <div className='card'>
